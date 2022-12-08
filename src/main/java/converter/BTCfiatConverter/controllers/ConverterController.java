@@ -19,4 +19,9 @@ public class ConverterController {
     public String btcToRub(@RequestParam String value) throws JsonProcessingException {
         return converterService.btcToRub(Double.parseDouble(value)).toString();
     }
+
+    @GetMapping("/btc-usd")
+    public String btcToUsd(@RequestParam String value) throws JsonProcessingException {
+        return converterService.btcToUsd(Double.parseDouble(value)).toString();
+    }
 }
