@@ -21,11 +21,17 @@ public class ConverterService {
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root = mapper.readTree(restTemplate.getForObject(url, String.class));
         exchangeRates.setBtcToRub(root.at("/RUB/last").asInt());
+        exchangeRates.setBtcToUsd(root.at("/USD/last").asInt());
         return exchangeRates;
     }
 
     public Double btcToRub(Double value) throws JsonProcessingException {
         getExchangeRates();
         return value * exchangeRates.getBtcToRub();
+    }
+
+    public Double btcToUsd(Double value) throws JsonProcessingException {
+        getExchangeRates();
+        return value * exchangeRates.getBtcToUsd();
     }
 }
