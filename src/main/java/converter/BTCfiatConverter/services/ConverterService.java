@@ -23,6 +23,7 @@ public class ConverterService {
         exchangeRates.setBtcToRub(root.at("/RUB/last").asInt());
         exchangeRates.setBtcToUsd(root.at("/USD/last").asInt());
         exchangeRates.setBtcToEur(root.at("/EUR/last").asInt());
+        exchangeRates.setBtcToCny(root.at("/CNY/last").asInt());
         return exchangeRates;
     }
 
@@ -39,5 +40,10 @@ public class ConverterService {
     public Double btcToEur(Double value) throws JsonProcessingException {
         getExchangeRates();
         return value * exchangeRates.getBtcToEur();
+    }
+
+    public Double btcToCny(Double value) throws JsonProcessingException {
+        getExchangeRates();
+        return value * exchangeRates.getBtcToCny();
     }
 }

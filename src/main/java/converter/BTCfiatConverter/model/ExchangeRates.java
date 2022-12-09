@@ -7,6 +7,7 @@ public class ExchangeRates {
     private Integer btcToRub;
     private Integer btcToUsd;
     private Integer btcToEur;
+    private Integer btcToCny;
 
     public Integer getBtcToRub() {
         return btcToRub;
@@ -30,5 +31,13 @@ public class ExchangeRates {
 
     public void setBtcToEur(Integer btcToEur) {
         this.btcToEur = btcToEur;
+    }
+
+    public Integer getBtcToCny() {
+        return btcToCny;
+    }
+
+    public void setBtcToCny(Integer btcToCny) {
+        this.btcToCny = btcToCny;
     }
 }
