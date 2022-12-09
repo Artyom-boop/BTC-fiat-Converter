@@ -24,4 +24,9 @@ public class ConverterController {
     public String btcToUsd(@RequestParam String value) throws JsonProcessingException {
         return converterService.btcToUsd(Double.parseDouble(value)).toString();
     }
+
+    @GetMapping("/btc-eur")
+    public String btcToEur(@RequestParam String value) throws JsonProcessingException {
+        return converterService.btcToEur(Double.parseDouble(value)).toString();
+    }
 }

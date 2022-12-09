@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 public class ExchangeRates {
     private Integer btcToRub;
     private Integer btcToUsd;
+    private Integer btcToEur;
 
     public Integer getBtcToRub() {
         return btcToRub;
@@ -21,5 +22,13 @@ public class ExchangeRates {
 
     public void setBtcToUsd(Integer btcToUsd) {
         this.btcToUsd = btcToUsd;
+    }
+
+    public Integer getBtcToEur() {
+        return btcToEur;
+    }
+
+    public void setBtcToEur(Integer btcToEur) {
+        this.btcToEur = btcToEur;
     }
 }

@@ -22,6 +22,7 @@ public class ConverterService {
         JsonNode root = mapper.readTree(restTemplate.getForObject(url, String.class));
         exchangeRates.setBtcToRub(root.at("/RUB/last").asInt());
         exchangeRates.setBtcToUsd(root.at("/USD/last").asInt());
+        exchangeRates.setBtcToEur(root.at("/EUR/last").asInt());
         return exchangeRates;
     }
 
@@ -33,5 +34,10 @@ public class ConverterService {
     public Double btcToUsd(Double value) throws JsonProcessingException {
         getExchangeRates();
         return value * exchangeRates.getBtcToUsd();
+    }
+
+    public Double btcToEur(Double value) throws JsonProcessingException {
+        getExchangeRates();
+        return value * exchangeRates.getBtcToEur();
     }
 }
