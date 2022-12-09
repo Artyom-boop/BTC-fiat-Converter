@@ -29,4 +29,9 @@ public class ConverterController {
     public String btcToEur(@RequestParam String value) throws JsonProcessingException {
         return converterService.btcToEur(Double.parseDouble(value)).toString();
     }
+
+    @GetMapping("/btc-cny")
+    public String btcToCny(@RequestParam String value) throws JsonProcessingException {
+        return converterService.btcToCny(Double.parseDouble(value)).toString();
+    }
 }
