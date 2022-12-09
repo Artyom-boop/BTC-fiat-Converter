@@ -1,6 +1,7 @@
 package converter.BTCfiatConverter.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import converter.BTCfiatConverter.model.ExchangeRates;
 import converter.BTCfiatConverter.services.ConverterService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +14,11 @@ public class ConverterController {
 
     public ConverterController(ConverterService converterService) {
         this.converterService = converterService;
+    }
+
+    @GetMapping("/exchange-rates")
+    public ExchangeRates exchangeRates() throws JsonProcessingException {
+        return converterService.getExchangeRates();
     }
 
     @GetMapping("/btc-rub")
