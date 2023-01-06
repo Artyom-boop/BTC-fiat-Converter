@@ -1,3 +1,7 @@
+```main:```
+![badge](https://github.com/Artyom-boop/BTC-fiat-Converter/actions/workflows/test.yml/badge.svg?branch=main)
+```develop:```
+![badge](https://github.com/Artyom-boop/BTC-fiat-Converter/actions/workflows/test.yml/badge.svg?branch=develop)
 # BTC-fiat-Converter
 
 Это Rest API приложение для конвертаций BTC в различные фиатные валюты.
